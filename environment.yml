@@ -1,0 +1,13 @@
+name: movementrec
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - PySide6>=6.6
+    - pynput>=1.7.6
+    - pywin32>=306
+    - mss>=9.0
+    - Pillow>=10.0
