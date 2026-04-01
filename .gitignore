@@ -1,1 +1,7 @@
 /.claude
+build/
+dist/
+__pycache__/
+*.pyc
+settings.json
+recordings/

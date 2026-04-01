@@ -37,6 +37,7 @@ from .keyboard_widget import KeyboardWidget
 from .mouse_widget import MouseWidget
 from .overlay import OverlayWidget
 from .playback_tab import PlaybackTab
+from .project_info_tab import ProjectInfoTab
 from .recording_list import RecordingList
 from .save_dialog import SaveDialog
 
@@ -625,6 +626,10 @@ class MainWindow(QMainWindow):
         self._settings_tab.set_keybinds_callback(self._on_keybinds_changed)
         self._settings_tab.set_interval_callback(self._on_interval_changed)
         self._tabs.addTab(self._settings_tab, "Settings")
+
+        # Tab 6: Project Info
+        self._project_info_tab = ProjectInfoTab()
+        self._tabs.addTab(self._project_info_tab, "Project Info")
 
         # --- Always-on-top overlay ---
         self._overlay = OverlayWidget()

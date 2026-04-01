@@ -14,7 +14,12 @@ from ui.main_window import MainWindow
 
 
 def main():
-    base_dir = Path(__file__).parent.resolve()
+    if getattr(sys, 'frozen', False):
+        base_dir = Path(sys.executable).parent.resolve()
+        bundle_dir = Path(getattr(sys, '_MEIPASS', base_dir)).resolve()
+    else:
+        base_dir = Path(__file__).parent.resolve()
+        bundle_dir = base_dir
     settings_path = base_dir / "settings.json"
     settings = Settings.load(settings_path)
 
@@ -22,7 +27,7 @@ def main():
     app.setApplicationName("MovementRec")
     app.setOrganizationName("MovementRec")
 
-    icon_path = base_dir / "icon.ico"
+    icon_path = bundle_dir / "icon.ico"
     if icon_path.exists():
         app_icon = QIcon(str(icon_path))
         app.setWindowIcon(app_icon)
