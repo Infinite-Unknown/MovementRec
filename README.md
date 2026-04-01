@@ -18,7 +18,7 @@ A Windows desktop tool for recording and playing back mouse and keyboard input. 
 
 Download the latest release from the [Releases](https://github.com/Infinite-Unknown/MovementRec/releases) page.
 
-1. Download `MovementRec_V1.exe` below
+1. Download `MovementRec_V1.exe`
 2. Extract into a new folder (since it will generate recording folder and settings json)
 3. Run `MovementRec.exe`
 
